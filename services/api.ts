@@ -8,10 +8,10 @@ export const TMDB_CONFIG = {
     }
 } // Acima, configuração da API do site TMDB onde eles passam uma API gratuita com vários filmes e mostram seu resumo e detalhes
 
-export const fetchMovies = async ({ query}: { query: string }) => {
+export const fetchMovies = async ({ query }: { query: string }) => {
     const endpoint = query // Se existir procura, mostre o que foi passado, se não, mostre os filmes populares.
        ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-       : `${TMDB_CONFIG.BASE_URL}/discover/movies?sort_by=popularity.desc`
+       : `${TMDB_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.descr`
 
     const response = await fetch(endpoint, {
         method: 'GET',
@@ -19,11 +19,11 @@ export const fetchMovies = async ({ query}: { query: string }) => {
     })
 
     if(!response.ok) {
-        throw new Error('Failed to fetch movies', response.statusText)
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Failed to fetch movies.')
     }
 
     const data = await response.json()
-
-    return data.results
+    return data.results || []
 }
 
