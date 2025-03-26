@@ -18,10 +18,6 @@ export default function Index() {
         query: ''
     }))
 
-    console.log('Movies data:', movies);
-    console.log('Loading:', moviesLoading);
-    console.log('Error:', moviesError);
-
     return (
     <View className="flex-1 bg-primary">
         <Image
