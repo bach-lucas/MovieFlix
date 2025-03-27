@@ -9,9 +9,9 @@ module.exports = {
         primary: '#030014',
         secondary: '#151312',
         light: {
-          100: '#D6C6FF',
-          200: '#A8D5BB',
-          300: '#9CA4AB',
+          100: "#D6C7FF",
+          200: "#A8B5DB",
+          300: "#9CA4AB",
         },
         dark: {
           100: '#221F3D',
