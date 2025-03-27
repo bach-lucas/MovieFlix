@@ -21,8 +21,6 @@ const Search = () => {
     }), false)
 
     useEffect(() => {
-        updateSearchCount(searchQuery, movies[0])
-
 
         const timeoutId = setTimeout( async () => {
             if (searchQuery.trim()) {
