@@ -5,8 +5,8 @@ import {icons} from "@/constants/icons";
 interface Props { // Define para o react native qual deve ser o tipo dos props
     placeholder: string
     onPress?: () => void
-    value: string
-    onChangeText: (text: string) => void
+    value?: string
+    onChangeText?: (text: string) => void
 }
 
 
